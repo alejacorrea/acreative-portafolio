@@ -52,7 +52,7 @@ const Contact = () => {
               <div>
                 <p className="contact__info-label">E-mail</p>
                 <a href="mailto:hola@acreative.com" className="contact__info-value">
-                  hola@acreative.com
+                  alejandracp63@gmail.com
                 </a>
               </div>
             </div>

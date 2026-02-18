@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Portafolio.css';
-import portafolio1 from '../../assets/proyecto1.jpg';
+import portafolio1 from '../../assets/portafolio1.jpg';
 import portafolio2 from '../../assets/portafolio2.jpg';
 import portafolio3 from '../../assets/portafolio3.jpg';
 
 const PORTFOLIO_ITEMS = [
-  { id: 1, image: portafolio1, hasImage: true, alt: 'Proyecto 1' },
-  { id: 2, image: portafolio2, hasImage: true, alt: 'Proyecto 2', featured: true },
-  { id: 3, image: portafolio3, hasImage: true, alt: 'Proyecto 3' },
+  { id: 1, image: portafolio1, hasImage: true, alt: 'portafolio 1' },
+  { id: 2, image: portafolio2, hasImage: true, alt: 'portafolio 2', featured: true },
+  { id: 3, image: portafolio3, hasImage: true, alt: 'portafolio 3' },
 ];
 
 const Portfolio = () => {

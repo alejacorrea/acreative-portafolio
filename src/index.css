@@ -1,0 +1,63 @@
+/* ============================================
+   GLOBAL STYLES - aCreative Designs Portfolio
+   ============================================ */
+
+:root {
+  --color-bg: #181818;
+  --color-primary: #69001F;
+  --color-white: #ffffff;
+  --color-gray-light: #f0f0f0;
+  --color-gray-mid: #888888;
+  --color-card-empty: #d8d8d8;
+
+  --font-display: 'Anton', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}

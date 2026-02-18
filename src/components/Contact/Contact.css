@@ -1,0 +1,342 @@
+/* ============================================
+   CONTACT SECTION - aCreative Designs
+   ============================================ */
+
+.contact {
+  background-color: var(--color-bg);
+  padding-bottom: 100px;
+}
+
+.contact__divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin-bottom: 60px;
+}
+
+.contact__inner {
+  padding: 0 60px;
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+/* ── LADO IZQUIERDO ── */
+.contact__left {
+  flex: 0 0 340px;
+  max-width: 340px;
+}
+
+.contact__header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+}
+
+.contact__category-line {
+  width: 48px;
+  height: 2px;
+  background-color: var(--color-white);
+  margin-bottom: 10px;
+}
+
+.contact__category-label {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--color-white);
+}
+
+.contact__title {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 5vw, 66px);
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--color-white);
+  line-height: 1;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.contact__subtitle {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 40px;
+}
+
+/* Info items */
+.contact__info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contact__info-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.contact__info-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.3s ease;
+}
+
+.contact__info-item:hover .contact__info-icon {
+  background: rgba(105, 0, 31, 0.3);
+}
+
+.contact__info-icon .material-symbols-outlined {
+  font-size: 20px;
+  color: var(--color-white);
+}
+
+.contact__info-label {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 3px;
+}
+
+.contact__info-value {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-white);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.contact__info-value:hover {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ── LADO DERECHO: FORM CARD ── */
+.contact__right {
+  flex: 1;
+}
+
+.contact__form-card {
+  background: #222222;
+  border-radius: 24px;
+  padding: 44px 40px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.contact__form-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--color-white);
+  letter-spacing: 1px;
+  margin-bottom: 36px;
+  line-height: 1;
+}
+
+/* ── FORM ── */
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.contact__form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+/* ── FIELD (floating label) ── */
+.contact__field {
+  position: relative;
+}
+
+.contact__input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.2);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  padding: 16px 0 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  resize: none;
+}
+
+.contact__textarea {
+  padding-top: 20px;
+  line-height: 1.6;
+}
+
+/* Label flotante */
+.contact__label {
+  position: absolute;
+  left: 0;
+  top: 16px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.4);
+  pointer-events: none;
+  transition: top 0.25s ease, font-size 0.25s ease, color 0.25s ease;
+}
+
+/* Label sube cuando el input tiene valor o está activo */
+.contact__input:focus ~ .contact__label,
+.contact__input:not(:placeholder-shown) ~ .contact__label {
+  top: 0px;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+/* Línea animada inferior */
+.contact__input-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background-color: var(--color-primary);
+  transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact__input:focus ~ .contact__label ~ .contact__input-line,
+.contact__input:focus ~ .contact__input-line {
+  width: 100%;
+}
+
+/* ── BOTÓN ENVIAR ── */
+.contact__submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border: none;
+  padding: 16px 32px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 8px;
+}
+
+.contact__submit:hover {
+  background-color: #85002a;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(105, 0, 31, 0.4);
+}
+
+.contact__submit .material-symbols-outlined {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.contact__submit:hover .material-symbols-outlined {
+  transform: translateX(4px);
+}
+
+/* ── MENSAJE DE ÉXITO ── */
+.contact__success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact__success .material-symbols-outlined {
+  font-size: 56px;
+  color: var(--color-primary);
+}
+
+.contact__success p {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+}
+
+/* ── ANIMACIONES ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.contact__left {
+  animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+.contact__form-card {
+  animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .contact__inner {
+    padding: 0 30px;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .contact__left {
+    flex: none;
+    max-width: 100%;
+  }
+
+  .contact__form-card {
+    padding: 36px 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact__inner {
+    padding: 0 20px;
+  }
+
+  .contact__form-card {
+    padding: 28px 20px;
+    border-radius: 18px;
+  }
+
+  .contact__form-row {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .contact__title {
+    font-size: clamp(38px, 11vw, 52px);
+  }
+
+  .contact__submit {
+    font-size: 15px;
+    padding: 14px 24px;
+  }
+}

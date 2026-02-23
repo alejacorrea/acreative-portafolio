@@ -32,7 +32,7 @@ const Contact = () => {
         asunto:  formData.asunto,
         mensaje: formData.mensaje,
       },
-      'Qtxy70EAMbygViCAC' // ← reemplaza con tu Public Key
+      'c8BXjPOEIFfooDdXp' // ← reemplaza con tu Public Key
     )
     .then(() => {
       setSending(false);

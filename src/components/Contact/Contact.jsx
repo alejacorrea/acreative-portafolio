@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Contact.css';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +11,8 @@ const Contact = () => {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -17,10 +20,31 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aquí conectas tu backend, EmailJS, Formspree, etc.
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
-    setFormData({ nombre: '', correo: '', asunto: '', mensaje: '' });
+    setSending(true);
+    setError(false);
+
+    emailjs.send(
+      'service_un0grdh',
+      'template_6g0iomh',
+      {
+        nombre:  formData.nombre,
+        correo:  formData.correo,
+        asunto:  formData.asunto,
+        mensaje: formData.mensaje,
+      },
+      'Qtxy70EAMbygViCAC' // ← reemplaza con tu Public Key
+    )
+    .then(() => {
+      setSending(false);
+      setSubmitted(true);
+      setTimeout(() => setSubmitted(false), 5000);
+      setFormData({ nombre: '', correo: '', asunto: '', mensaje: '' });
+    })
+    .catch(() => {
+      setSending(false);
+      setError(true);
+      setTimeout(() => setError(false), 4000);
+    });
   };
 
   return (
@@ -51,7 +75,7 @@ const Contact = () => {
               </div>
               <div>
                 <p className="contact__info-label">E-mail</p>
-                <a href="mailto:hola@acreative.com" className="contact__info-value">
+                <a href="mailto:alejandracp63@gmail.com" className="contact__info-value">
                   alejandracp63@gmail.com
                 </a>
               </div>
@@ -88,7 +112,6 @@ const Contact = () => {
               </div>
             ) : (
               <form className="contact__form" onSubmit={handleSubmit}>
-                {/* Nombre + Correo en fila */}
                 <div className="contact__form-row">
                   <div className="contact__field">
                     <input
@@ -121,7 +144,6 @@ const Contact = () => {
                   </div>
                 </div>
 
-                {/* Asunto */}
                 <div className="contact__field">
                   <input
                     type="text"
@@ -137,7 +159,6 @@ const Contact = () => {
                   <span className="contact__input-line" />
                 </div>
 
-                {/* Mensaje */}
                 <div className="contact__field contact__field--textarea">
                   <textarea
                     name="mensaje"
@@ -153,9 +174,17 @@ const Contact = () => {
                   <span className="contact__input-line" />
                 </div>
 
-                <button type="submit" className="contact__submit">
-                  <span>Enviar</span>
-                  <span className="material-symbols-outlined">send</span>
+                {error && (
+                  <p className="contact__error">
+                    Hubo un error al enviar. Intenta de nuevo.
+                  </p>
+                )}
+
+                <button type="submit" className="contact__submit" disabled={sending}>
+                  <span>{sending ? 'Enviando...' : 'Enviar'}</span>
+                  <span className="material-symbols-outlined">
+                    {sending ? 'hourglass_empty' : 'send'}
+                  </span>
                 </button>
               </form>
             )}

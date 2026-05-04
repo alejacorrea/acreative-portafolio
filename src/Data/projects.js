@@ -1,13 +1,29 @@
+import proyecto0 from '../assets/acsa1.jpg';
 import proyecto1 from '../assets/proyecto1.jpg';
 import proyecto2 from '../assets/proyecto2.jpg';
 import proyecto3 from '../assets/proyecto3.jpg';
 import proyecto4 from '../assets/proyecto4.jpg';
 import portafolio1 from '../assets/portafolio1.jpg';
 import portafolio3 from '../assets/portafolio3.jpg';
+import acsa1 from '../assets/acsa1.jpg';
+import acsa2 from '../assets/acsa2.jpg';
+import acsa3 from '../assets/acsa3.jpg';
 
 const PROJECTS_DATA = [
+
   {
     id: 1,
+    label: 'REDISEÑO PORTADA Y CONTRAPORTADA CATALOGO ACSA',
+    title: 'Diseño Editorial',
+    category: 'Editorial Design',
+    image: proyecto0,
+    images: [acsa1, acsa2, acsa3], 
+    description: 'Rediseño de la portada, contraportada y páginas institucionales del catálogo 2026 para ACSA Perú. El proyecto se enfocó en modernizar la identidad visual, mejorar la jerarquía de la información y lograr una presentación más limpia, coherente y alineada con la imagen corporativa de la marca.',
+    tags: ['editorial', 'catalogo', 'revista', 'diseño'],
+    year: '2026',
+  },
+  {
+    id: 2,
     label: 'SOULMOVE',
     title: 'Identidad de Marca',
     category: 'Branding',
@@ -18,7 +34,7 @@ const PROJECTS_DATA = [
     year: '2025',
   },
   {
-    id: 2,
+    id: 3,
     label: 'CATALOGO INNOVATION 2026',
     title: 'Diseño Editorial',
     category: 'Editorial Design',
@@ -28,7 +44,7 @@ const PROJECTS_DATA = [
     year: '2025',
   },
   {
-    id: 3,
+    id: 4,
     label: 'ARTES META ADS E INSTAGRAM',
     title: 'Diseño Digital',
     category: 'Digital Design',
@@ -38,7 +54,7 @@ const PROJECTS_DATA = [
     year: '2025',
   },
   {
-    id: 4,
+    id: 5,
     label: 'ACDesarrollo – Juego de Mesa',
     title: 'Proyectos Especiales',
     category: 'Product & Experience Design',

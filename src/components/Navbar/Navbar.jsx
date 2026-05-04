@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../../assets/logo.png';
+
+
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -32,7 +35,7 @@ const Navbar = () => {
         <ul className="navbar__nav">
           <li><a href="#inicio"     className="navbar__nav-link active">Inicio</a></li>
           <li><a href="#servicios"  className="navbar__nav-link">Servicios</a></li>
-          <li><a href="#portafolio" className="navbar__nav-link">Portafolio</a></li>
+          <li><Link to="/proyectos" className="navbar__nav-link" onClick={closeMenu}>Portafolio</Link></li>
         </ul>
 
         {/* Actions */}
@@ -60,7 +63,7 @@ const Navbar = () => {
         <ul className="mobile-menu__links">
           <li><a href="#inicio"     onClick={closeMenu}>Inicio</a></li>
           <li><a href="#servicios"  onClick={closeMenu}>Servicios</a></li>
-          <li><a href="#portafolio" onClick={closeMenu}>Portafolio</a></li>
+          <li><Link to="/proyectos" onClick={closeMenu}>Portafolio</Link></li>
           <li><a href="#contacto"   onClick={closeMenu} className="mobile-menu__cta">Contáctame</a></li>
         </ul>
       </div>

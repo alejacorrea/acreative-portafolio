@@ -1,13 +1,22 @@
 import React, { useState } from 'react';
 import './Hero.css';
+import proyecto0 from '../../assets/acsa1.jpg';
 import proyecto1 from '../../assets/proyecto1.jpg';
 import proyecto2 from '../../assets/proyecto2.jpg';
 import proyecto3 from '../../assets/proyecto3.jpg';
 import proyecto4 from '../../assets/proyecto4.jpg';
 
 const PROJECTS = [
-  {
+   {
     id: 1,
+    label: 'REDISEÑO PORTADA Y CONTRAPORTADA CATALOGO ACSA',
+    title: ['DISEÑO', 'EDITORIAL'],
+    category: 'Editorial Design',
+    image: proyecto0,
+    hasImage: true,
+  },
+  {
+    id: 2,
     label: 'SOULMOVE',
     title: ['IDENTIDAD', 'DE MARCA'],
     category: 'Branding',
@@ -15,7 +24,7 @@ const PROJECTS = [
     hasImage: true,
   },
   {
-    id: 2,
+    id: 3,
     label: 'CATALOGO INNOVATION 2026',
     title: ['DISEÑO', 'EDITORIAL'],
     category: 'Editorial Design',
@@ -23,7 +32,7 @@ const PROJECTS = [
     hasImage: true,
   },
   {
-    id: 3,
+    id: 4,
     label: 'ARTES META ADS E INSTAGRAM',
     title: ['DISEÑO', 'DIGITAL'],
     category: 'Digital Design',
@@ -31,7 +40,7 @@ const PROJECTS = [
     hasImage: true,
   },
   {
-    id: 4,
+    id: 5,
     label: 'ACDesarrollo – Juego de Mesa',
     title: ['PROYECTOS', 'ESPECIALES'],
     category: 'Product & Experience Design',
